@@ -1,0 +1,30 @@
+kind: Deployment
+apiVersion: apps/v1
+#for deployment particular value is given for api like apps/v1
+metadata:
+  name: nginx-deployment
+  namespace: nginx
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: nginx
+        #selector is used to select the pod which contains label of nginx to create a replica
+
+  template:
+    metadata:
+      name: nginx-dep-pod
+      labels:
+        app: nginx
+          #template is for pod 
+
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+
+# we can avoid creating pod.yml
+# we can specify in deployment.yml file also under template and spec list

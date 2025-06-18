@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+# because our k8s is running on version 1
+#metadata it contains the data in form of object
+metadata:
+  name: nginx
