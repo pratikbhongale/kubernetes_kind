@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-service
+  namespace: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+        #here this port is about on which port to you want your user to access it
+      targetPort: 80
+        #target port is on which do we want to run the pod
+  type: ClusterIP
+    #types are clusterip,nodeport, loadbalancer,externalip,headless service
+
